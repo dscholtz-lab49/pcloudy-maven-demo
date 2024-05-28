@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="pCloudy Sample Demo">
+    <test name="Android test">
+        <parameter name="platformName" value="ANDROID"/>
+        <parameter name="platformVersion" value="12.0.0"/>
+  <classes>
+  <class name="testRunner.Runner" />
+  </classes>
+    </test>
+</suite>
