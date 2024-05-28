@@ -1,14 +1,17 @@
 package stepDefinitions.android;
 
+import drivers.AndroidDriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.android.LoginPage;
 import stepDefinitions.BaseSteps;
+import utils.Hooks;
 
 import static org.testng.Assert.assertTrue;
 
 public class AndroidSteps extends BaseSteps {
+    protected AndroidDriverManager androidDriverManager = Hooks.androidDriverManager;
 
     @Given("^User install \"([^\"]*)\"$")
     public void userInstallApp(String app) {

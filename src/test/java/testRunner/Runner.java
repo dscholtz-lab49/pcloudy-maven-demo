@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
 	    features = "src/test/resources/features",
-	    glue = {"stepDefinitions"},
+	    glue = {"stepDefinitions", "utils"},
 	    plugin = {
 	                "pretty",
 	                "html:target/cucumber-reports/cucumber-pretty",
@@ -19,18 +19,5 @@ import io.cucumber.testng.CucumberOptions;
 )
 
 public class Runner extends AbstractTestNGCucumberTests {
-
-	protected AndroidDriverManager androidDriverManager;
-	protected IOSDriverManager iosDriverManager;
-
-
-	@AfterAll()
-	public void tearDown () {
-		if (androidDriverManager != null) {
-			androidDriverManager.quitDriver ();
-		} else if (iosDriverManager != null) {
-			iosDriverManager.quitDriver ();
-		}
-	}
 
 }

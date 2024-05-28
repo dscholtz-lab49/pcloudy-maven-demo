@@ -1,4 +1,5 @@
 /Users/daniel.scholtz/projects/pcloudy-maven-demo/src/test/java/testRunner/Runner.java
 /Users/daniel.scholtz/projects/pcloudy-maven-demo/src/test/java/stepDefinitions/BaseSteps.java
+/Users/daniel.scholtz/projects/pcloudy-maven-demo/src/test/java/utils/Hooks.java
 /Users/daniel.scholtz/projects/pcloudy-maven-demo/src/test/java/pages/android/LoginPage.java
 /Users/daniel.scholtz/projects/pcloudy-maven-demo/src/test/java/stepDefinitions/android/AndroidSteps.java
