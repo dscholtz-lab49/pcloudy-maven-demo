@@ -1,0 +1,21 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "children" : [ {
+    "name" : "src.test.resources.features.Android_feature.This is a demo feature file for apk installation",
+    "children" : [ {
+      "name" : "Install app and open it",
+      "uid" : "ed724a86d1dc44ea",
+      "parentUid" : "3cb791d732ecab193d551a71cfe21c53",
+      "status" : "passed",
+      "time" : {
+        "start" : 1716916298398,
+        "stop" : 1716916302685,
+        "duration" : 4287
+      },
+      "flaky" : true,
+      "parameters" : [ ]
+    } ],
+    "uid" : "src.test.resources.features.Android_feature.This is a demo feature file for apk installation"
+  } ],
+  "name" : "packages"
+}

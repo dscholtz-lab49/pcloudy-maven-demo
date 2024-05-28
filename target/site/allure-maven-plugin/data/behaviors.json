@@ -1,0 +1,25 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "children" : [ {
+    "name" : "This is a demo feature file for apk installation",
+    "children" : [ {
+      "name" : "Install app and open it",
+      "children" : [ {
+        "name" : "Install app and open it",
+        "uid" : "ed724a86d1dc44ea",
+        "parentUid" : "071f624cf17d3ea9cc6a2e38db2481d4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1716916298398,
+          "stop" : 1716916302685,
+          "duration" : 4287
+        },
+        "flaky" : true,
+        "parameters" : [ ]
+      } ],
+      "uid" : "071f624cf17d3ea9cc6a2e38db2481d4"
+    } ],
+    "uid" : "343014693ffbb4c1c442bc015d391b24"
+  } ],
+  "name" : "behaviors"
+}
