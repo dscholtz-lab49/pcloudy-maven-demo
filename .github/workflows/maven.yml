@@ -15,6 +15,9 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
+      - name: Add pCloudy jar
+        run: mvn install:install-file -Dfile=lib/pCloudy-java-connector-11.0.7-jar-with-dependencies.jar -DgroupId=pCloudy-java-connector -DartifactId=pCloudy-java-connector -Dversion=11.0.7 -Dpackaging=jar
+
       - name: Install
         run: mvn clean install -DskipTests
 
