@@ -17,7 +17,7 @@
         <dependency>
             <groupId>pCloudy-java-connector</groupId>
             <artifactId>pCloudy-java-connector</artifactId>
-            <version>11.0.3</version>
+            <version>11.0.7</version>
         </dependency>
         <dependency>
             <groupId>io.appium</groupId>
