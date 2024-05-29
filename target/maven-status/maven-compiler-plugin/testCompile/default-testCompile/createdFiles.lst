@@ -1,5 +1,0 @@
-pages/android/LoginPage.class
-utils/Hooks.class
-stepDefinitions/android/AndroidSteps.class
-stepDefinitions/BaseSteps.class
-testRunner/Runner.class
