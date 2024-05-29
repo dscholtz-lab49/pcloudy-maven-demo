@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Wed May 29 13:44:52 GMT 2024","Wed May 29 13:49:54 GMT 2024","301985","","This is a demo feature for Website Test Automation","","Open webpage and validate personal menu is displayed","","Open webpage and validate personal menu is displayed",""
+"passed","Wed May 29 13:49:54 GMT 2024","Wed May 29 13:50:06 GMT 2024","11798","","This is a demo feature for Website Test Automation","","Open webpage and validate business menu is displayed","","Open webpage and validate business menu is displayed",""
+"passed","Wed May 29 13:44:13 GMT 2024","Wed May 29 13:44:52 GMT 2024","39216","","This is a demo feature file for apk installation","","Install app and open it","","Install app and open it",""
