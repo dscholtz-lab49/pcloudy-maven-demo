@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="pCloudy Sample Demo">
+    <listeners>
+        <listener class-name="listener.CustomListener"></listener>
+    </listeners>
+    <test name="pCloudy test">
+  <classes>
+  <class name="testRunner.RunnerMobile" />
+  </classes>
+    </test>
+</suite>

@@ -1,8 +1,8 @@
 package stepDefinitions.android;
 
 import drivers.AndroidDriverManager;
-import io.cucumber.java.AfterAll;
-import io.cucumber.java.BeforeAll;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,7 +15,7 @@ import static org.testng.Assert.assertTrue;
 public class AndroidSteps extends BaseSteps {
     protected static AndroidDriverManager androidDriverManager;
 
-    @BeforeAll
+    @Before("@TestMobile")
     public static void setUp() {
         androidDriverManager = AndroidDriverManager.builder ()
                 .platform (Platform.ANDROID)
@@ -24,7 +24,7 @@ public class AndroidSteps extends BaseSteps {
                 .createAndroidDriver ();
     }
 
-    @AfterAll()
+    @After("@TestMobile")
     public static void tearDown () {
         if (androidDriverManager != null) {
             androidDriverManager.quitDriver();
