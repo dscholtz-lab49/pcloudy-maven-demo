@@ -3,6 +3,7 @@ package testRunner;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import listener.CustomListener;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 
 
@@ -19,5 +20,11 @@ import org.testng.annotations.Listeners;
 )
 @Listeners(CustomListener.class)
 public class RunnerWeb extends AbstractTestNGCucumberTests {
+
+	@Override
+	@DataProvider(parallel = true)
+	public Object[][] scenarios() {
+		return super.scenarios();
+	}
 
 }

@@ -2,6 +2,7 @@ package stepDefinitions.web;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -36,7 +37,22 @@ public class WebSteps {
         webDriver = new ChromeDriver(chromeOptions);
     }
 
-    @After("@TestWeb")
+    @After(order = 1)
+    public void takeScreenshotOnFailure(Scenario scenario) {
+        if (scenario.isFailed()) {
+            try {
+                TakesScreenshot ts = (TakesScreenshot) webDriver;
+                File source = ts.getScreenshotAs(OutputType.FILE);
+                String dest = "screenshots/" + scenario.getName() + ".png";
+                File destination = new File(dest);
+                FileUtils.copyFile(source, destination);
+            } catch (IOException e) {
+                e.getMessage();
+            }
+        }
+    }
+
+    @After(value = "@TestWeb", order = 0)
     public void tearDown () {
         if (webDriver != null) {
             webDriver.quit();
