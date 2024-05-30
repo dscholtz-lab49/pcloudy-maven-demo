@@ -12,7 +12,7 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "(//div[contains(@class, 'top-menu')]//a[contains(text(), 'Personal')])[1]")
     private WebElement personalMenu;
 
-    @FindBy(xpath = "(//div[contains(@class, 'top-menu')]//a[contains(text(), 'Business')])[1]")
+    @FindBy(xpath = "(//div[contains(@class, 'top-menu')]//a[contains(text(), 'NotValid')])[1]")
     private WebElement businessMenu;
 
     public HomePage(WebDriver webDriver) {

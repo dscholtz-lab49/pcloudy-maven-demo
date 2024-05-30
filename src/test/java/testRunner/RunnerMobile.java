@@ -18,7 +18,6 @@ import org.testng.annotations.Listeners;
 		},
 		tags = "@TestMobile"
 )
-@Listeners(CustomListener.class)
 public class RunnerMobile extends AbstractTestNGCucumberTests {
 
 }

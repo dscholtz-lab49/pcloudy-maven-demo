@@ -19,7 +19,6 @@ import org.testng.annotations.Listeners;
 		},
 		tags = "@TestWeb"
 )
-@Listeners(CustomListener.class)
 public class RunnerWeb extends AbstractTestNGCucumberTests {
 
 	@Override

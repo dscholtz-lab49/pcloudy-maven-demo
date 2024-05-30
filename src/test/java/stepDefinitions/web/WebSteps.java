@@ -1,5 +1,6 @@
 package stepDefinitions.web;
 
+import drivers.DriverManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
@@ -7,6 +8,7 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Allure;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -15,14 +17,22 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import pages.web.HomePage;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import static org.testng.Assert.assertTrue;
 
 public class WebSteps {
 
     private WebDriver webDriver;
+    private DriverManager driverManager;
+
+    public WebSteps() {
+        driverManager = new DriverManager();
+    }
 
     @BeforeAll()
     public static void cleanUp() {
@@ -37,16 +47,7 @@ public class WebSteps {
 
     @Before(value = "@TestWeb", order = 1)
     public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--window-size=1920,1080");
-        chromeOptions.addArguments("--headless");
-        chromeOptions.addArguments("--disable-gpu");
-        chromeOptions.addArguments("--disable-dev-shm-usage");
-        chromeOptions.addArguments("--no-sandbox");
-        chromeOptions.addArguments("--ignore-certificate-errors");
-        chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36");
-        webDriver = new ChromeDriver(chromeOptions);
+        webDriver = driverManager.createAndroidDriver("chrome");
     }
 
     @After(order = 1)
@@ -58,6 +59,12 @@ public class WebSteps {
                 String dest = "screenshots/" + scenario.getName().replace(" ", "_") + ".png";
                 File destination = new File(dest);
                 FileUtils.copyFile(source, destination);
+
+                try {
+                    Allure.addAttachment("Screenshot", Files.newInputStream(Paths.get(dest)));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             } catch (IOException e) {
                 e.getMessage();
             }
