@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu May 30 11:34:31 GMT 2024","Thu May 30 11:34:51 GMT 2024","20056","","This is a demo feature for Website Test Automation","","Open webpage and validate personal menu is displayed","","Open webpage and validate personal menu is displayed",""
+"broken","Thu May 30 11:34:31 GMT 2024","Thu May 30 11:34:51 GMT 2024","19740","","This is a demo feature for Website Test Automation","","Open webpage and validate business menu is displayed","","Open webpage and validate business menu is displayed",""
