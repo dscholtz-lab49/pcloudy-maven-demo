@@ -2,6 +2,7 @@ package stepDefinitions.web;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -23,7 +24,18 @@ public class WebSteps {
 
     private WebDriver webDriver;
 
-    @Before("@TestWeb")
+    @BeforeAll()
+    public static void cleanUp() {
+        String screenshotFolder = "screenshots/";
+        File folder = new File(screenshotFolder);
+        try {
+            FileUtils.cleanDirectory(folder);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Before(value = "@TestWeb", order = 1)
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
@@ -43,7 +55,7 @@ public class WebSteps {
             try {
                 TakesScreenshot ts = (TakesScreenshot) webDriver;
                 File source = ts.getScreenshotAs(OutputType.FILE);
-                String dest = "screenshots/" + scenario.getName() + ".png";
+                String dest = "screenshots/" + scenario.getName().replace(" ", "_") + ".png";
                 File destination = new File(dest);
                 FileUtils.copyFile(source, destination);
             } catch (IOException e) {

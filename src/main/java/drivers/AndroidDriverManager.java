@@ -50,7 +50,7 @@ public class AndroidDriverManager {
         capabilities.setCapability ("newCommandTimeout", 600);
         capabilities.setCapability ("launchTimeout", 90000);
         capabilities.setCapability ("autoGrantPermissions", true);
-        capabilities.setCapability("pCloudy_DeviceManufacturer", "SAMSUNG");
+        capabilities.setCapability("pCloudy_DeviceManufacturer", "GOOGLE");
         capabilities.setCapability("pCloudy_DeviceVersion", "14.0.0");
         capabilities.setCapability ("platformVersion", platformVersion);
         capabilities.setCapability ("platformName", platform);
@@ -62,6 +62,7 @@ public class AndroidDriverManager {
         capabilities.setCapability ("pCloudy_EnableVideo", "true");
         capabilities.setCapability ("pCloudy_EnablePerformanceData", "false");
         capabilities.setCapability ("pCloudy_EnableDeviceLogs", "true");
+        capabilities.setCapability ("pCloudy_screenShotOnError", "true");
         return capabilities;
     }
 }

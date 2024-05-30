@@ -14,7 +14,8 @@ import org.testng.annotations.Listeners;
 	                "pretty",
 	                "html:target/cucumber-reports/cucumber-pretty",
 	                "json:target/cucumber-reports/CucumberTestReport.json",
-					"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
+					"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
+					"listener.CustomEventListener"
 		},
 		tags = "@TestWeb"
 )
